@@ -4,9 +4,15 @@
 <body>
     <h1>{{ .title }}</h1>
 
-    {{ template "footer.tmpl" .}}
+    {{ if (eq .content "homepage_content")}}
+        {{ template "homepage_content.tmpl" .}}
+    {{ else if (eq .content "pong_content")}}
+        {{ template "pong_content.tmpl" .}}
+    {{ else }}
+        {{ template "empty_content.tmpl" }}
+    {{ end }}
 
-    {{ template "scripts.tmpl" }}
+    {{ template "footer.tmpl" .}}
 </body>
 
 </html>

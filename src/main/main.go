@@ -13,17 +13,18 @@ func main() {
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "page.tmpl", gin.H{
-			"tab_title":      "TEST PAGE",
-			"title":          "EET'S WOOURKING!!!!",
-			"footer_content": "FOOTER",
+			"tab_title": "Literally A Single Video",
+			"title":     "Welcome, Nate",
+			"content":   "homepage_content",
 		})
 	})
 
 	router.GET("/ping", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "pong.tmpl", gin.H{
-			"tab_title": "Ping",
+		c.HTML(http.StatusOK, "page.tmpl", gin.H{
+			"tab_title": "PONG!",
 			"title":     "Current Time",
-			"content":   time.Now(),
+			"content":   "pong_content",
+			"value":     time.Now(),
 		})
 	})
 
